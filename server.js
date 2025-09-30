@@ -70,7 +70,7 @@ io.on('connection', (socket) => {
 
     // --- A. IP CHECK ---
     const clientIP = socket.handshake.address;
-    const isCollegeIP = ipUtils(clientIP, COLLEGE_IP_RANGES);
+    const isCollegeIP = ipRangeCheck(clientIP, COLLEGE_IP_RANGES);
     if (!isCollegeIP) {
         socket.emit('ip_block', 'You must be connected to the college Wi-Fi.');
         socket.disconnect(true);
@@ -182,4 +182,5 @@ server.listen(PORT, () => {
     console.log(`Listening on *:${PORT}`);
 
 });
+
 
