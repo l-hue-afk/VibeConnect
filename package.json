@@ -1,0 +1,18 @@
+{
+  "name": "vibeconnect-chat",
+  "version": "1.0.0",
+  "description": "Anonymous chat with permanent subscription memory.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "ip-range-check": "^1.0.0",
+    "socket.io": "^4.7.2",
+    "mongoose": "^6.0.0",
+    "firebase-admin": "^11.5.0"
+  },
+  "author": "Your Name",
+  "license": "ISC"
+}
