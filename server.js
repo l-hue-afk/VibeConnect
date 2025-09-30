@@ -11,7 +11,7 @@ const admin = require('firebase-admin');
 
 // --- 1. CONFIGURATION (ACTION REQUIRED) ---
 const PORT = process.env.PORT || 3000;
-const COLLEGE_IP_RANGES = ["157.48.205.10", "127.0.0.1", "::1"];
+const COLLEGE_IP_RANGES = ["0.0.0.0/0","::/0", "127.0.0.1", "::1"];
 const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
 const MONGO_URI = "mongodb+srv://karnavagarwal07_db_user:vQn3uEBLXwUrcai2@cluster0.unvpy7z.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"; // e.g., mongodb+srv://user:pass@cluster.mongodb.net/vibeconnect
 
@@ -182,3 +182,4 @@ server.listen(PORT, () => {
     console.log(`Listening on *:${PORT}`);
 
 });
+
