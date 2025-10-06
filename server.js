@@ -104,7 +104,7 @@ io.on('connection', (socket) => {
 
     // --- C. TRANSACTION ID SUBMISSION ---
     socket.on('submit_tx_id', async ({ txId, token }) => {
-         console.log(`SERVER: Received transaction ID submission: ${txId}`); // <-- ADD THIS LINE
+        console.log(`SERVER: Received transaction ID submission: ${txId}`); // <-- ADD THIS LINE
         if (!currentUserId) return; // Must be authenticated first
 
         try {
