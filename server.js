@@ -19,7 +19,11 @@ const MONGO_URI = "mongodb+srv://karnavagarwal07_db_user:vQn3uEBLXwUrcai2@cluste
 // You need to set the service account key in Render environment variables or load it here.
 // For zero-cost, you MUST use environment variables (e.g., FIREBASE_CREDENTIALS)
 // The logic below assumes you've handled Firebase Admin setup via environment variables for Render.
-admin.initializeApp({ /* ... set credentials via environment variables ... */ });
+const serviceAccount = JSON.parse(process.env.FIREBASE_CREDENTIALS);
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
 
 
 // --- 2. DATABASE SCHEMA ---
