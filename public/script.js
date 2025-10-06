@@ -78,9 +78,11 @@ socket.on('access_required', () => {
 // --- 3. TRANSACTION SUBMISSION ---
 submitTxIdButton.addEventListener('click', () => {
     const txId = txIdInput.value.trim();
+    console.log('Submit button clicked. Transaction ID:', txId); // <-- ADD THIS LINE
     if (txId.length > 5) {
         txStatusMsg.style.color = '#17a2b8';
         txStatusMsg.textContent = 'Submitting ID for manual verification...';
+        console.log('Attempting to send data to server...'); // <-- ADD THIS LINE
         socket.emit('submit_tx_id', { txId: txId, token: userToken });
     } else {
         txStatusMsg.style.color = '#dc3545';
