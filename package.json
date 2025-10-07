@@ -1,5 +1,5 @@
 {
-  "name": "vibeconnect-chat",
+  "name": "banterbox-chat",
   "version": "1.0.0",
   "description": "Anonymous chat with permanent subscription memory.",
   "main": "server.js",
