@@ -181,9 +181,6 @@ io.on('connection', (socket) => {
             io.to(partnerId).emit('partner_left');
             activeChats.delete(partnerId);
             activeChats.delete(socket.id);
-            if (!waitingQueue.includes(partnerId)) {
-                waitingQueue.push(partnerId);
-            }
         }
         socket.emit('chat_ended_self'); // <-- ADD THIS LINE
         socketUserMap.delete(socket.id); // Remove Google ID mapping on disconnect
