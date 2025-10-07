@@ -162,6 +162,15 @@ io.on('connection', (socket) => {
             waitingQueue.push(socket.id);
         }
     });
+    // --- NEW: ADD THIS ENTIRE BLOCK ---
+    socket.on('chat_message', (msg) => {
+        const partnerId = activeChats.get(socket.id);
+        if (partnerId) {
+            // Forward the message to the partner's socket
+            io.to(partnerId).emit('chat_message', `Stranger: ${msg}`);
+        }
+    });
+
 
     // --- E. DISCONNECT/END CHAT ---
     const handleEndChat = () => {
