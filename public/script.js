@@ -155,3 +155,13 @@ socket.on('partner_left', () => {
     form.style.display = 'none';
     messages.scrollTop = messages.scrollHeight;
 });
+
+// script.js
+
+socket.on('chat_ended_self', () => {
+    updateStatus('Chat ended. Find a new Vibe!', 'info');
+    startButton.textContent = 'Start Chat';
+    startButton.disabled = false;
+    form.style.display = 'none';
+    messages.scrollTop = messages.scrollHeight;
+});
